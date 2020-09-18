@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class LottoResult {
 
-    private static final long LOTTO_AMOUNT = 1000;
+    private static final double LOTTO_AMOUNT = 1000;
     private int totalLottoCnt;
     private int totalPrize;
     private int fifthPlaceCnt;

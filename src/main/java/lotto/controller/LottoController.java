@@ -16,7 +16,7 @@ public class LottoController {
     }
 
     public int getLottoCount() {
-        return this.lottos.lottos.size();
+        return this.lottos.getLottos().size();
     }
 
     public void checkWinningNumeber(List<Integer> winningNumbers, int bonusNumber) {
