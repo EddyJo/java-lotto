@@ -16,7 +16,7 @@ public class LottoResult {
     private double profitPercent;
 
     public LottoResult(Lottos lottos) {
-        this.totalLottoCnt = lottos.lottos.size();
+        this.totalLottoCnt = lottos.getLottos().size();
         this.firstPlaceCnt = 0;
         this.secondPlaceCnt = 0;
         this.thirdPlaceCnt = 0;

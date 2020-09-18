@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toCollection;
 
 public class Lottos {
 
-    public List<Lotto> lottos;
+    private List<Lotto> lottos;
 
     private Lottos(List<Lotto> lottos) {
         this.lottos = lottos;
@@ -26,5 +26,9 @@ public class Lottos {
     public void checkWinningNumbers(List<Integer> winningNumbers, int bounsNumber) {
         lottos.stream().forEach( value -> value.findLottoRank(winningNumbers, bounsNumber));
 
+    }
+
+    public List<Lotto> getLottos() {
+        return lottos;
     }
 }

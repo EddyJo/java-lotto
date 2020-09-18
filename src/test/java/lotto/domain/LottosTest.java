@@ -35,6 +35,6 @@ public class LottosTest {
 
         int bounsNumber = 7;
         lottos.checkWinningNumbers(winningNumbers, bounsNumber);
-        assertThat(lottos.lottos.get(0).getRank().getMatchCount()).isEqualTo(6);
+        assertThat(lottos.getLottos().get(0).getRank().getMatchCount()).isEqualTo(6);
     }
 }
