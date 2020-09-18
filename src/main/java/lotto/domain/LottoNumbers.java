@@ -9,9 +9,9 @@ import static java.util.stream.Collectors.toCollection;
 
 public class LottoNumbers {
 
-    private List<LottoNumber> lottoNumbers;
+    ArrayList<LottoNumber> lottoNumbers;
 
-    public LottoNumbers(List<LottoNumber> lottoNumbers) {
+    public LottoNumbers(ArrayList<LottoNumber> lottoNumbers) {
         this.lottoNumbers = lottoNumbers;
     }
 
@@ -39,25 +39,7 @@ public class LottoNumbers {
         return 0;
     }
 
-    public List<LottoNumber> getLottoNumbers() {
+    public ArrayList<LottoNumber> getLottoNumbers() {
         return this.lottoNumbers;
-    }
-
-    public boolean isMatchBoundsNumber(int bounsNumber) {
-        if(getMatchCount(bounsNumber) == 1) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public Rank getLottoRank(List<Integer> winningLottoNumbers, int bounsNumber) {
-        int matchCount = 0;
-
-        for(Integer winningLottoNumber : winningLottoNumbers) {
-            matchCount += getMatchCount(winningLottoNumber);
-        }
-
-        return Rank.create(matchCount, isMatchBoundsNumber(bounsNumber));
     }
 }

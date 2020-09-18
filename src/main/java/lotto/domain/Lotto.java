@@ -4,23 +4,23 @@ import java.util.List;
 
 public class Lotto {
 
-    private LottoNumbers lottoNumbers;
-    private Rank rank;
+    LottoNumbers lottoNums;
+    Rank rank;
 
-    private Lotto(LottoNumbers lottoNumbers) {
-        this.lottoNumbers = lottoNumbers;
+    private Lotto(LottoNumbers lottoNums) {
+        this.lottoNums = lottoNums;
     }
 
     public static Lotto of(List<Integer> lottoNums) {
         return new Lotto(LottoNumbers.create(lottoNums));
     }
 
-    public void findLottoRank(List<Integer> winningLottoNumbers, int bounsNumber) {
-        this.rank = lottoNumbers.getLottoRank(winningLottoNumbers, bounsNumber);
+    public void findLottoRank(List<Integer> winningLottoNumbers) {
+        this.rank = lottoNums.getLottoRank(winningLottoNumbers);
     }
 
-    public LottoNumbers getLottoNumbers() {
-        return this.lottoNumbers;
+    public LottoNumbers getLottoNums() {
+        return this.lottoNums;
     }
 
     public Rank getRank() {
@@ -37,6 +37,6 @@ public class Lotto {
         if(this == obj) return true;
         if(obj == null || getClass() != obj.getClass()) return false;
         Lotto lotto = (Lotto) obj;
-        return lottoNumbers == ((Lotto) obj).lottoNumbers;
+        return lottoNums == ((Lotto) obj).lottoNums;
     }
 }

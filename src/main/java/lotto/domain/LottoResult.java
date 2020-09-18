@@ -8,7 +8,6 @@ public class LottoResult {
     private static final long LOTTO_AMOUNT = 1000;
     private int totalLottoCnt;
     private int totalPrize;
-    private int fifthPlaceCnt;
     private int fourthPlaceCnt;
     private int thirdPlaceCnt;
     private int secondPlaceCnt;
@@ -21,7 +20,6 @@ public class LottoResult {
         this.secondPlaceCnt = 0;
         this.thirdPlaceCnt = 0;
         this.fourthPlaceCnt = 0;
-        this.fifthPlaceCnt = 0;
         calculatePalceCnt(lottos);
         this.profitPercent = totalPrize/(totalLottoCnt * LOTTO_AMOUNT);
     }
@@ -48,10 +46,6 @@ public class LottoResult {
             this.totalPrize += Rank.FourthPlace.getWinnings();
             this.fourthPlaceCnt++;
         }
-        if(Rank.FifthPlace.equals(rank)) {
-            this.totalPrize += Rank.FifthPlace.getWinnings();
-            this.fifthPlaceCnt++;
-        }
     }
 
     public static LottoResult create(Lottos lottos) {
@@ -59,7 +53,7 @@ public class LottoResult {
     }
 
     public ArrayList<Integer> getPlaceCnt() {
-        return new ArrayList(Arrays.asList(firstPlaceCnt, secondPlaceCnt, thirdPlaceCnt, fourthPlaceCnt, fifthPlaceCnt));
+        return new ArrayList(Arrays.asList(firstPlaceCnt, secondPlaceCnt, thirdPlaceCnt, fourthPlaceCnt));
     }
 
     public double getProfitPercent() {

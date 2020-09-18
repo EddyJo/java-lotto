@@ -5,7 +5,6 @@ import lotto.domain.LottoResult;
 import lotto.domain.Lottos;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LottoController {
 
@@ -19,8 +18,8 @@ public class LottoController {
         return this.lottos.lottos.size();
     }
 
-    public void checkWinningNumeber(List<Integer> winningNumbers, int bonusNumber) {
-        lottos.checkWinningNumbers(winningNumbers, bonusNumber);
+    public void checkWinningNumeber(ArrayList<Integer> winningNumbers) {
+        lottos.checkWinningNumbers(winningNumbers);
     }
 
     public Lottos getLottos() {
