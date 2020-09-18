@@ -21,16 +21,6 @@ public class LottoNumbers {
                                                   .collect(toCollection(ArrayList::new)));
     }
 
-    public Rank getLottoRank(List<Integer> winningLottoNumbers) {
-        int matchCount = 0;
-
-        for(Integer winningLottoNumber : winningLottoNumbers) {
-            matchCount += getMatchCount(winningLottoNumber);
-        }
-
-        return Rank.create(matchCount);
-    }
-
     private int getMatchCount(Integer winningLottoNumber) {
         if(lottoNumbers.stream().anyMatch(val -> val.isMatchNumber(winningLottoNumber))) {
             return 1;

@@ -67,8 +67,8 @@ public class LottoNumbersTest {
                 .collect(toCollection(ArrayList::new));
 
         ArrayList<Integer> expected = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 7, 8));
-
-        assertThat(LottoNumbers.create(lottoNums).getLottoRank(expected)).isEqualTo(Rank.FourthPlace);
+        int bounsNumber = 10;
+        assertThat(LottoNumbers.create(lottoNums).getLottoRank(expected, bounsNumber)).isEqualTo(Rank.FourthPlace);
     }
 
 
