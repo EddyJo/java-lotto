@@ -20,6 +20,7 @@ public class LottoController {
     }
 
     public void checkWinningNumeber(List<Integer> winningNumbers, int bonusNumber) {
+
         lottos.checkWinningNumbers(winningNumbers, bonusNumber);
     }
 

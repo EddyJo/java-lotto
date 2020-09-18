@@ -16,7 +16,32 @@ public class Lotto {
     }
 
     public void findLottoRank(List<Integer> winningLottoNumbers, int bounsNumber) {
-        this.rank = lottoNumbers.getLottoRank(winningLottoNumbers, bounsNumber);
+
+        int matchCount = 0;
+
+        for(Integer winningLottoNumber : winningLottoNumbers) {
+            matchCount += getMatchCount(winningLottoNumber);
+        }
+
+        this.rank = Rank.create(matchCount, isMatchBoundsNumber(bounsNumber));
+    }
+
+
+    private int getMatchCount(Integer winningLottoNumber) {
+        if(lottoNumbers.getLottoNumbers().stream().anyMatch(val -> val.isMatchNumber(winningLottoNumber))) {
+            return 1;
+        }
+
+        return 0;
+    }
+
+
+    public boolean isMatchBoundsNumber(int bounsNumber) {
+        if(getMatchCount(bounsNumber) == 1) {
+            return true;
+        }
+
+        return false;
     }
 
     public LottoNumbers getLottoNumbers() {
