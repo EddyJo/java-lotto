@@ -32,4 +32,11 @@ public class InputView {
         Scanner scan = new Scanner(System.in);
         return scan.nextInt();
     }
+
+    public static int getPurchaseCountOfManual() {
+
+        System.out.println("수동으로 구매할 로또 수를 입력해주새요.");
+        Scanner scan = new Scanner(System.in);
+        return scan.nextInt();
+    }
 }

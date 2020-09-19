@@ -34,4 +34,7 @@ public class LottoCreater {
         Collections.shuffle(LOTTO_NUMBER_LIST);
         return LOTTO_NUMBER_LIST.subList(0, 6);
     }
+
+
+
 }
