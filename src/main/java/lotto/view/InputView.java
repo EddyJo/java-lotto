@@ -39,4 +39,22 @@ public class InputView {
         Scanner scan = new Scanner(System.in);
         return scan.nextInt();
     }
+
+    public static List<List<Integer>> getManualLottoNumber(int purchaseCountOfManual) {
+
+        System.out.println("수동으로 구매할 번호를 입력해주세요.");
+        Scanner scan = new Scanner(System.in);
+
+        List<List<Integer>> manualLottoNumberList = new ArrayList<>();
+        for(int i=0;i<purchaseCountOfManual;i++) {
+            String[] inputStr = scan.nextLine().split(DELIMITER);
+            ArrayList<Integer> manualottoNumbers = Arrays.stream(inputStr)
+                                                        .map(input -> Integer.parseInt(input.trim()))
+                                                        .collect(toCollection(ArrayList::new));
+
+            manualLottoNumberList.add(manualottoNumbers);
+        }
+
+        return manualLottoNumberList;
+    }
 }
